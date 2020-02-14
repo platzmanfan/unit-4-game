@@ -10,6 +10,7 @@ var win;
 var image;
 var loss;
 var increment = [1,2,3,4,5,6,7,8,9,10,11,12];
+var counterTotal = $("#counter");
 var options
 var counterTotal;
 var getElements = function(){
@@ -33,7 +34,13 @@ var randomDisplay = function(min, max){
     return Math.floor(Math.random() * (max - min) + min);
     
 }
+var reset = function(){
+    counter = 0;
+    randomDisplay();
+    
+}
 var createImg = function(){
+    
     var crystal = $("<img>");
     var crystal1 =$("<img>");
     var crystal2 =$("<img>");
@@ -46,7 +53,7 @@ var createImg = function(){
     crystal1.attr("src", "assets/images/crystal-2.png");
     crystal2.attr("src", "assets/images/crystal-3.png");
     crystal3.attr("src", "assets/images/crystal-4.png");
-    // crystal1.attr("data-image", options);
+    crystal1.attr("data-image", options);
     if(!randomNumber === crystal) {$(".crystals").append(crystal); }
     crystal.attr("data-image" , randomNumber(1,13));
     if(!randomNumber === crystal1) {$(".crystals").append(crystal1); }
@@ -67,9 +74,11 @@ $(document).ready(function(){
 });
 
 console.log(randomDisplay(19,120))
-$(".crystal-image").click(function(){
+$(document).on("click", ".crystal-image" , function(){
     var value = ($(this).attr("data-image"));
     value = parseInt(value);
-    alert("hello" + value);
+    counter += value;
+    counterTotal.text(counter);
+    
 });
 
