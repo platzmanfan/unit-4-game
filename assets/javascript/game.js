@@ -10,7 +10,7 @@ var win;
 var image;
 var loss;
 var increment = [1,2,3,4,5,6,7,8,9,10,11,12];
-var counterTotal = $("#counter");
+var targetNumber;
 var options
 var counterTotal;
 var getElements = function(){
@@ -31,12 +31,13 @@ var randomNumber = function(){
 }
 var randomDisplay = function(min, max){
     
-    return Math.floor(Math.random() * (max - min) + min);
+    targetNumber = Math.floor(Math.random() * (max - min) + min);
+    return targetNumber;
     
 }
 var reset = function(){
     counter = 0;
-    randomDisplay();
+    $("#counter").text(counter)
     
 }
 var createImg = function(){
@@ -73,12 +74,27 @@ $(document).ready(function(){
    
 });
 
-console.log(randomDisplay(19,120))
+// console.log(randomDisplay(19,120))
 $(document).on("click", ".crystal-image" , function(){
     var value = ($(this).attr("data-image"));
     value = parseInt(value);
     counter += value;
-    counterTotal.text(counter);
+    $("#counter").text(counter);
     
+    if(counter === targetNumber){
+        wins++;
+        $("#wins").text(wins);
+        setElement();
+        reset();
+    }
+    else if (counter > targetNumber){
+        losses++;
+        $("#losses").text(losses);
+        setElement();
+        reset();
+    }
+
+
+
 });
 
