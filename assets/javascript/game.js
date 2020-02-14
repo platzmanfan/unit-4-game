@@ -5,12 +5,12 @@ var losses =0;
 
 // using jquery we pulling the html elements
 
-var randomNum = $("#randomNumber");
 
 var win;
-
+var image;
 var loss;
-
+var increment = [1,2,3,4,5,6,7,8,9,10,11,12];
+var options
 var counterTotal;
 var getElements = function(){
     randomNum = $("#randomNumber");
@@ -20,17 +20,56 @@ var getElements = function(){
 }
 var setElement = function(){
     $("#randomNumber").text(randomDisplay(19,120));
+   
+}
+ 
+var randomNumber = function(){
+    options = increment[Math.floor(Math.random() * increment.length)];
+   return options;
+   
 }
 var randomDisplay = function(min, max){
     
     return Math.floor(Math.random() * (max - min) + min);
     
-   
 }
-
+var createImg = function(){
+    var crystal = $("<img>");
+    var crystal1 =$("<img>");
+    var crystal2 =$("<img>");
+    var crystal3 =$("<img>");
+    crystal.addClass("crystal-image");
+    crystal1.addClass("crystal-image");
+    crystal2.addClass("crystal-image");
+    crystal3.addClass("crystal-image");
+    crystal.attr("src", "assets/images/crystal-1.png");
+    crystal1.attr("src", "assets/images/crystal-2.png");
+    crystal2.attr("src", "assets/images/crystal-3.png");
+    crystal3.attr("src", "assets/images/crystal-4.png");
+    // crystal1.attr("data-image", options);
+    if(!randomNumber === crystal) {$(".crystals").append(crystal); }
+    crystal.attr("data-image" , randomNumber(1,13));
+    if(!randomNumber === crystal1) {$(".crystals").append(crystal1); }
+    crystal1.attr("data-image" , randomNumber(1,13));
+    if(!randomNumber === crystal2){$(".crystals").append(crystal2); }
+    crystal2.attr("data-image" , randomNumber(1,13));
+    if(!randomNumber === crystal3) {$(".crystals").append(crystal3); }
+    crystal3.attr("data-image" , randomNumber(1,13));
+    $(".crystals").append(crystal);
+    $(".crystals").append(crystal1);
+    $(".crystals").append(crystal2);
+    $(".crystals").append(crystal3);
+}
 $(document).ready(function(){
     setElement();
+   createImg();
+   
 });
 
 console.log(randomDisplay(19,120))
+$(".crystal-image").click(function(){
+    var value = ($(this).attr("data-image"));
+    value = parseInt(value);
+    alert("hello" + value);
+});
 

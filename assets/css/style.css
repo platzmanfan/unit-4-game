@@ -52,6 +52,10 @@
 #randomNumber{
     color:black;
 }
+.crystal-image{
+    width:100px;
+    height: 120px;
+}
 .crystals{
     background-color: aqua;
     width:425px;
