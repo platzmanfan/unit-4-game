@@ -1,3 +1,6 @@
+body{
+    background-color: firebrick;
+}
 #header{
     background-color:#cb6f34;
     color:white;
@@ -36,6 +39,8 @@
     font-size: 40px;
 }
 #box1{
+    border-radius: 100px;
+    border-color: 10px solid black;
     margin-left:10px;
     background-color: aqua;
     color:black;
@@ -52,16 +57,19 @@
 #randomNumber{
     color:black;
 }
-.crystal-image{
+.crystal-image,
+.crystal-image1,.crystal-image2,.crystal-image3{
     width:100px;
     height: 120px;
 }
+
 .crystals{
     background-color: aqua;
     width:425px;
     height: 120px;
     margin-top:180px;
     margin-left:10px;
+    border-style: dotted;
 }
 #score{
     background-color: #1da397;
