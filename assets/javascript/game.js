@@ -11,8 +11,6 @@ var image;
 var loss;
 var increment = [1,2,3,4,5,6,7,8,9,10,11,12];
 var targetNumber;
-var empty;
-var array;
 var options
 var counterTotal;
 // we create functions to get elements, set the number and give random numbers!!
@@ -42,9 +40,8 @@ var randomDisplay = function(min, max){
 var reset = function(){
     counter = 0;
     $("#counter").text(counter);
-        //working till here
+        
 
-       $(".crystal-image").attr("data-image", options);
        
     
 }
