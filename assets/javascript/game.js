@@ -6,7 +6,7 @@ var losses =0;
 // using jquery we pulling the html elements
 
 
-var win;
+
 var image;
 var loss;
 var increment = [1,2,3,4,5,6,7,8,9,10,11,12];
@@ -30,7 +30,7 @@ var randomNumber = function(){
     return options;
    
 }
-var randomNumber
+
 var randomDisplay = function(min, max){
     
     targetNumber = Math.floor(Math.random() * (max - min) + min);
@@ -41,9 +41,6 @@ var reset = function(){
     counter = 0;
     $("#counter").text(counter);
         
-
-       
-    
 }
 // we pulling the pictures and creating them via jquery
 

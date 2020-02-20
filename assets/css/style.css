@@ -61,6 +61,8 @@ body{
 .crystal-image1,.crystal-image2,.crystal-image3{
     width:100px;
     height: 120px;
+    cursor: pointer;
+    border-style: 5px dotted black;
 }
 
 .crystals{
@@ -69,7 +71,7 @@ body{
     height: 120px;
     margin-top:180px;
     margin-left:10px;
-    border-style: dotted;
+    
 }
 #score{
     background-color: #1da397;
