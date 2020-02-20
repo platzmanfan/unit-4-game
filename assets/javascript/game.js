@@ -77,7 +77,7 @@ $(document).ready(function(){
           setElement();
           createImg();
    
-});
+
 var rNumber = function(){
    
     $(".crystal-image").attr("data-image", randomNumber(1,13));
@@ -108,4 +108,4 @@ $(document).on("click touchend" , ".crystal-image , .crystal-image1, .crystal-im
        
     }
 });
-
+});
